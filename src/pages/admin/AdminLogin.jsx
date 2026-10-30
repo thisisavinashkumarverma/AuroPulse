@@ -48,10 +48,7 @@ export default function AdminLogin() {
           <Input name="password" type="password" label="Password" value={v.password} onChange={(e) => setV({ ...v, password: e.target.value })} error={errors.password} autoComplete="current-password" />
           <button className="btn-primary w-full" disabled={busy}>{busy ? 'Signing in...' : 'Login to Admin Panel'}</button>
         </form>
-        <div className="mt-5 rounded-lg bg-primary-50 p-3 text-xs text-primary-800 dark:bg-slate-700 dark:text-primary-100">
-          <strong>Demo:</strong> admin@avinashhospital.com / Admin@123
-          <button type="button" className="ml-2 underline" onClick={() => setV({ email: 'admin@avinashhospital.com', password: 'Admin@123' })}>Fill</button>
-        </div>
+        
         <p className="mt-5 text-center text-sm"><Link to="/login" className="link">Patient login</Link></p>
       </div>
     </section>
