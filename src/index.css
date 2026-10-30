@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-surface text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-100; }
+  :focus-visible { @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-slate-900; }
+  h1, h2, h3 { @apply text-slate-900 dark:text-white; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-primary-600 text-white hover:bg-primary-700; }
+  .btn-secondary { @apply btn bg-secondary-700 text-white hover:bg-secondary-800; }
+  .btn-outline { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-ghost { @apply btn text-primary-700 hover:bg-primary-50 dark:text-primary-200 dark:hover:bg-slate-700; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary-500 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100; }
+  .label { @apply mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200; }
+  .badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+  .link { @apply text-primary-700 underline-offset-2 hover:underline dark:text-primary-200; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+  body * { visibility: hidden; }
+  #invoice-print, #invoice-print * { visibility: visible; }
+  #invoice-print { position: absolute; left: 0; top: 0; width: 100%; background: #fff; color: #000; }
+  .no-print { display: none !important; }
+}
