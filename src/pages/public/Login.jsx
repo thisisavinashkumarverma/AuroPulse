@@ -49,10 +49,7 @@ export default function Login() {
           <Input name="password" type="password" label="Password" value={v.password} onChange={(e) => setV({ ...v, password: e.target.value })} error={errors.password} autoComplete="current-password" />
           <button className="btn-primary w-full" disabled={busy}>{busy ? 'Signing in...' : 'Login'}</button>
         </form>
-        <div className="mt-5 rounded-lg bg-primary-50 p-3 text-xs text-primary-800 dark:bg-slate-700 dark:text-primary-100">
-          <strong>Demo account:</strong> 9876543210 / Patient@123
-          <button type="button" className="ml-2 underline" onClick={() => setV({ mobile: '9876543210', password: 'Patient@123' })}>Fill</button>
-        </div>
+       
         <p className="mt-5 text-center text-sm">New here? <Link to="/signup" className="link font-semibold">Create an account</Link></p>
         <p className="mt-2 text-center text-xs text-slate-500">Hospital staff? <Link to="/admin/login" className="link">Admin login</Link></p>
       </div>
